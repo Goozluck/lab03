@@ -2,4 +2,25 @@
 1617020318 source:l:\i курс\А-1-20\aleksandrov misha\lab03\lab03\main.cpp
 	<iostream>
 	<vector>
+	<iostream>
+	<vector>
+
+1617026142 source:c:\users\u211-19\desktop\lab03\main.cpp
+	<iostream>
+	<vector>
+	<iostream>
+	<vector>
+
+1618224834 source:l:\i курс\А-1-20\aleksandrov misha\lab03\main.cpp
+	"histogram.h"
+	<iostream>
+	<vector>
+	<string>
+	"histogram.h"
+	<iostream>
+	<vector>
+	<string>
+
+1618224989 l:\i курс\А-1-20\aleksandrov misha\lab03\histogram.h
+	<vector>
 
