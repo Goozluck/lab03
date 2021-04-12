@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "fiil.h"
 using namespace std;
 void
 svg_begin(double width, double height) {
@@ -22,14 +23,10 @@ svg_text(double left, double baseline, string text) {
 }
 
 void svg_rect(double x, double y, double width, double height,
-    string stroke="#111", string fill="#111") {
+        string stroke="#111", string fill="#111") {
     cout << "<rect x='" << x << "' y='" << y << "' width='" << width << "' height='" << height << "' stroke='" << stroke << "' fill='" << fill << "'/>";
 }
-string
-fill01(size_t bin,size_t max_count){
-    //string A="#"+to_string((10 - (bin * 9) / max_count)*111);
-return("#"+to_string((10 - (bin * 9) / max_count)*111));
-}
+
 void
 show_histogram_svg(const vector<size_t>& bins) {
     const auto IMAGE_WIDTH = 400;
@@ -53,9 +50,9 @@ show_histogram_svg(const vector<size_t>& bins) {
         svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
         string A=fill01(bin,max_count);
         if (bin==max_count)
-            svg_rect(TEXT_WIDTH, top, IMAGE_WIDTH, BIN_HEIGHT,"black",A);
+            svg_rect(TEXT_WIDTH, top, IMAGE_WIDTH, BIN_HEIGHT);
         else
-            svg_rect(TEXT_WIDTH, top, IMAGE_WIDTH*(static_cast<double>(bin)/max_count), BIN_HEIGHT,"black",A);
+            svg_rect(TEXT_WIDTH, top, IMAGE_WIDTH*(static_cast<double>(bin)/max_count), BIN_HEIGHT);
         top += BIN_HEIGHT;
     }
     svg_end();

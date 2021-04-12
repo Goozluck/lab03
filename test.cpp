@@ -1,5 +1,6 @@
 #include "histogram.h"
 #include "svg.h"
+#include "fiil.h"
 #include <cassert>
 
 void
@@ -48,9 +49,17 @@ test_positive5() {
 }
 void
 test_positive6() {
-    assert(fill01(4,4)== "#111");
+    assert(fill01(1,9)== "#999");
 }
 
+void
+test_positive7() {
+    assert(fill01(2,6)== "#777");
+}
+void
+test_positive8() {
+    assert(fill01(5,9)== "#555");
+}
 int
 main() {
     test_positive();
@@ -60,4 +69,6 @@ main() {
     test_positive4();
     test_positive5();
     test_positive6();
+    test_positive7();
+    test_positive8();
 }

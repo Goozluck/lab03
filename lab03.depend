@@ -24,12 +24,15 @@
 1618226954 source:l:\i курс\А-1-20\aleksandrov misha\lab03\histogram.cpp
 	<vector>
 
-1618230778 l:\i курс\А-1-20\aleksandrov misha\lab03\svg.h
+1618232809 l:\i курс\А-1-20\aleksandrov misha\lab03\svg.h
 	<vector>
 	<string>
 
-1618231050 source:l:\i курс\А-1-20\aleksandrov misha\lab03\svg.cpp
+1618232817 source:l:\i курс\А-1-20\aleksandrov misha\lab03\svg.cpp
 	<iostream>
 	<vector>
+	<string>
+
+1618233055 source:l:\i курс\А-1-20\aleksandrov misha\lab03\fill.cpp
 	<string>
 
