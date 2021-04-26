@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "fiil.h"
+//#include "fiil.h"
 using namespace std;
 void
 svg_begin(double width, double height) {
@@ -48,7 +48,7 @@ show_histogram_svg(const vector<size_t>& bins) {
     for (size_t bin : bins) {
         const double bin_width = BLOCK_WIDTH * bin;
         svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
-        string A=fill01(bin,max_count);
+       // string A=fill01(bin,max_count);
         if (bin==max_count)
             svg_rect(TEXT_WIDTH, top, IMAGE_WIDTH, BIN_HEIGHT);
         else

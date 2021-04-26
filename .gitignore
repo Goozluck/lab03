@@ -1,2 +1,3 @@
-bin
-obj
+/bin
+/obj
+/lab03-test
