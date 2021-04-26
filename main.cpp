@@ -4,16 +4,17 @@
 #include <vector>
 #include <string>
 #include <curl/curl.h>
+#include<sstream>
 
 using namespace std;
+
+const size_t SCREEN_WIDTH = 80;
+const size_t MAX_ASTERISK = SCREEN_WIDTH - 3 - 1;
 
 struct Input{
 vector<double> numbers;
 size_t bin_count;
 };
-
-const size_t SCREEN_WIDTH = 80;
-const size_t MAX_ASTERISK = SCREEN_WIDTH - 3 - 1;
 
 vector<double>
 input_numbers(istream& in, size_t count) {
@@ -74,8 +75,6 @@ make_histogram(Input data) {
     return bins;
 }
 
-
-
 void
 show_histogram_text(const vector<size_t>& bins) {
     size_t max_count = bins[0];
@@ -109,31 +108,32 @@ show_histogram_text(const vector<size_t>& bins) {
     return;
 }
 
+Input
+download(const string& address) {
+    stringstream buffer;
 
-
-int main(int argc, char* argv[]) {
-    if(argc>1)
-    {/*
-        for(int i=0;i<argc;i++)
-        {
-            cerr<<argv[i]<<endl;
-        }
-        cerr<<"Count: "<<argc<<endl;
-*/
-        CURL* curl=curl_easy_init();
-
+    CURL* curl=curl_easy_init();
     if(curl) {
            CURLcode res;
-           curl_easy_setopt(curl, CURLOPT_URL, argv[1]);
+           curl_easy_setopt(curl, CURLOPT_URL, address.c_str());
            res = curl_easy_perform(curl);
            cerr<<curl_easy_strerror(res);
            curl_easy_cleanup(curl);
            }
-    return 0;
-    }
 
-    curl_global_init(CURL_GLOBAL_ALL);
-    const auto input = read_input(cin,true);
+    return read_input(buffer, false);
+}
+
+
+
+int main(int argc, char* argv[]) {
+    Input input;
+    if(argc>1){
+        input=download(argv[1]);
+
+          } else{
+            input=read_input(cin,true);
+           }
     const auto bins = make_histogram(input);
 
 
