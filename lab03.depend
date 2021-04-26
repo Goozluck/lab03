@@ -11,12 +11,13 @@
 	<iostream>
 	<vector>
 
-1619436938 source:l:\i курс\А-1-20\aleksandrov misha\lab03\main.cpp
+1619444581 source:l:\i курс\А-1-20\aleksandrov misha\lab03\main.cpp
 	"histogram.h"
 	"svg.h"
 	<iostream>
 	<vector>
 	<string>
+	<curl/curl.h>
 
 1618224989 l:\i курс\А-1-20\aleksandrov misha\lab03\histogram.h
 	<vector>
@@ -35,4 +36,46 @@
 
 1618233055 source:l:\i курс\А-1-20\aleksandrov misha\lab03\fill.cpp
 	<string>
+
+1618204474 l:\i курс\А-1-20\aleksandrov misha\lab03\curl\include\curl\curl.h
+	"curlver.h"
+	"system.h"
+	<stdio.h>
+	<limits.h>
+	<osreldate.h>
+	<sys/types.h>
+	<time.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/select.h>
+	<sys/socket.h>
+	<sys/time.h>
+	<support/SupportDefs.h>
+	"easy.h"
+	"multi.h"
+	"urlapi.h"
+	"options.h"
+	"typecheck-gcc.h"
+
+1618369046 l:\i курс\А-1-20\aleksandrov misha\lab03\curl\include\curl\curlver.h
+
+1618201874 l:\i курс\А-1-20\aleksandrov misha\lab03\curl\include\curl\system.h
+	<winsock2.h>
+	<windows.h>
+	<ws2tcpip.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<sys/poll.h>
+
+1618201874 l:\i курс\А-1-20\aleksandrov misha\lab03\curl\include\curl\easy.h
+
+1618201874 l:\i курс\А-1-20\aleksandrov misha\lab03\curl\include\curl\multi.h
+	"curl.h"
+
+1618201874 l:\i курс\А-1-20\aleksandrov misha\lab03\curl\include\curl\urlapi.h
+	"curl.h"
+
+1618201874 l:\i курс\А-1-20\aleksandrov misha\lab03\curl\include\curl\options.h
+
+1618203848 l:\i курс\А-1-20\aleksandrov misha\lab03\curl\include\curl\typecheck-gcc.h
 
