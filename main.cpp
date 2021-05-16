@@ -6,6 +6,7 @@
 
 #include <curl/curl.h>
 
+
 using namespace std;
 
 struct Input{
@@ -112,15 +113,12 @@ show_histogram_text(const vector<size_t>& bins) {
 }
 
 int main(int argc, char* argv[]) {
-     if(argc>1){/*
+     if(argc>1){
        for(int i=0;i<argc;i++)
         cerr<<argv[i]<<endl;
+     CURL* curl=curl_easy_init();
 
-         //cerr<<"Count: "<<argc<<endl;*/
-
-          CURL* curl=curl_easy_init();
-
-    if(curl) {
+     if(curl) {
            CURLcode res;
            curl_easy_setopt(curl, CURLOPT_URL, argv[1]);
            res = curl_easy_perform(curl);
