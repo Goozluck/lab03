@@ -39,7 +39,7 @@
 1621177119 source:c:\users\админ\documents\С++\programmist(3)\labs\я\lab04.01\histogram.cpp
 	<vector>
 
-1621183631 source:c:\users\админ\documents\С++\programmist(3)\labs\я\lab04.01\main.cpp
+1621184911 source:c:\users\админ\documents\С++\programmist(3)\labs\я\lab04.01\main.cpp
 	"histogram.h"
 	"svg.h"
 	<iostream>
@@ -49,7 +49,7 @@
 	<sstream>
 	<string>
 
-1621177120 c:\users\админ\documents\С++\programmist(3)\labs\я\lab04.01\histogram.h
+1621185019 c:\users\админ\documents\С++\programmist(3)\labs\я\lab04.01\histogram.h
 	<vector>
 
 1621177120 c:\users\админ\documents\С++\programmist(3)\labs\я\lab04.01\svg.h
