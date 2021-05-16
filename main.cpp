@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 
+#include <curl/curl.h>
+
 using namespace std;
 
 struct Input{
@@ -27,17 +29,22 @@ input_numbers(istream& in,size_t count) {
 
 
 Input
-read_input(istream& in){
+read_input(istream& in, bool prompt){
 Input data;
+if(prompt)
 cerr<<"Enter number count: ";
+
 size_t number_count;
 in >> number_count;
 
+if(prompt)
 cerr<<" Enter numbers: ";
+
 data.numbers =input_numbers(in,number_count);
 
-
+if(prompt)
 cerr <<"Enter bin count: ";
+
 size_t bin_count;
 in >> bin_count;
 
@@ -104,9 +111,10 @@ show_histogram_text(const vector<size_t>& bins) {
     return;
 }
 
-int main() {
-    read_input(cin);
-    const auto input = read_input(cin);
+int main(int argc, char* argv[]) {
+    curl_global_init(CURL_GLOBAL_ALL);
+
+    const auto input = read_input(cin,true);
     const auto bins = make_histogram(input);
     show_histogram_svg(bins);
 
