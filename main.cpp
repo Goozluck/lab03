@@ -38,7 +38,7 @@ size_t number_count;
 in >> number_count;
 
 if(prompt)
-cerr<<" Enter numbers: ";
+cerr<<"Enter numbers: ";
 
 data.numbers =input_numbers(in,number_count);
 
@@ -112,6 +112,25 @@ show_histogram_text(const vector<size_t>& bins) {
 }
 
 int main(int argc, char* argv[]) {
+     if(argc>1){/*
+       for(int i=0;i<argc;i++)
+        cerr<<argv[i]<<endl;
+
+         //cerr<<"Count: "<<argc<<endl;*/
+
+          CURL* curl=curl_easy_init();
+
+    if(curl) {
+           CURLcode res;
+           curl_easy_setopt(curl, CURLOPT_URL, argv[1]);
+           res = curl_easy_perform(curl);
+           cerr<<curl_easy_strerror(res);
+           curl_easy_cleanup(curl);
+           }
+
+            return 0;
+    }
+
     curl_global_init(CURL_GLOBAL_ALL);
 
     const auto input = read_input(cin,true);
