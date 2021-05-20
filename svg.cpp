@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "fiil.h"
+#include <windows.h>
+#include "InfoText.h"
 using namespace std;
 void
 svg_begin(double width, double height) {
@@ -23,8 +24,13 @@ svg_text(double left, double baseline, string text) {
 }
 
 void svg_rect(double x, double y, double width, double height,
-        string stroke="#111", string fill="#111") {
+        string stroke="black", string fill="red") {
     cout << "<rect x='" << x << "' y='" << y << "' width='" << width << "' height='" << height << "' stroke='" << stroke << "' fill='" << fill << "'/>";
+}
+
+void
+svg_text01(double left, double baseline, string (*make_info_text)(void)) {
+    cout << "<text x='" << left << "' y='" << baseline << "'>" <<make_info_text()<< "</text>";
 }
 
 void
@@ -35,10 +41,8 @@ show_histogram_svg(const vector<size_t>& bins) {
     const auto TEXT_BASELINE = 20;
     const auto TEXT_WIDTH = 50;
     const auto BIN_HEIGHT = 30;
-    const auto BLOCK_WIDTH = 10;
+//    const auto BLOCK_WIDTH = 10;
     svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
-   // svg_text(TEXT_LEFT, TEXT_BASELINE, to_string(bins[0]));
-   // svg_rect(TEXT_WIDTH,0, BLOCK_WIDTH, BIN_HEIGHT);
     double top = 0;
     size_t max_count = bins[0];
     for (size_t j : bins)
@@ -46,15 +50,14 @@ show_histogram_svg(const vector<size_t>& bins) {
             max_count = j;
 
     for (size_t bin : bins) {
-        const double bin_width = BLOCK_WIDTH * bin;
         svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
-        string A=fill01(bin,max_count);
         if (bin==max_count)
-            svg_rect(TEXT_WIDTH, top, IMAGE_WIDTH, BIN_HEIGHT);
+            svg_rect(TEXT_WIDTH, top, IMAGE_WIDTH, BIN_HEIGHT,"black","blue");
         else
             svg_rect(TEXT_WIDTH, top, IMAGE_WIDTH*(static_cast<double>(bin)/max_count), BIN_HEIGHT);
         top += BIN_HEIGHT;
     }
+    svg_text01(TEXT_LEFT, top + TEXT_BASELINE,make_info_text);
     svg_end();
 
 }

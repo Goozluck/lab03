@@ -36,3 +36,38 @@
 1618233055 source:l:\i курс\А-1-20\aleksandrov misha\lab03\fill.cpp
 	<string>
 
+1621534873 source:c:\users\админ\documents\С++\programmist(3)\labs\я\lab04.01\histogram.cpp
+	<vector>
+	<iostream>
+
+1621551432 source:c:\users\админ\documents\С++\programmist(3)\labs\я\lab04.01\main.cpp
+	"histogram.h"
+	"svg.h"
+	<iostream>
+	<sstream>
+	<vector>
+	<string>
+	<windows.h>
+
+1621534902 c:\users\админ\documents\С++\programmist(3)\labs\я\lab04.01\histogram.h
+	<vector>
+
+1621534631 c:\users\админ\documents\С++\programmist(3)\labs\я\lab04.01\svg.h
+	<vector>
+	<string>
+
+1621551393 source:c:\users\админ\documents\С++\programmist(3)\labs\я\lab04.01\svg.cpp
+	<iostream>
+	<vector>
+	<string>
+	<windows.h>
+	"InfoText.h"
+
+1621551366 source:c:\users\админ\documents\С++\programmist(3)\labs\я\lab04.01\infotext.cpp
+	<iostream>
+	<string>
+	<windows.h>
+	<sstream>
+
+1621551416 c:\users\админ\documents\С++\programmist(3)\labs\я\lab04.01\infotext.h
+
