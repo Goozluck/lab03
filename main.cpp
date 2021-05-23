@@ -32,7 +32,13 @@ make_info_text() {
     DWORD platform = info>>16;
     DWORD build;
     if ((platform &0x8000) == 0) build =platform;
-    cout<<"Window V"<<version_major<<"."<<version_minor<<"(build "<<build<<")\n";
+
+    DWORD DNS = MAX_COMPUTERNAME_LENGTH+1;
+    char ComputerName[DNS];
+    GetComputerNameA(ComputerName,&DNS);
+    cout<<"Window V"<<version_major<<"."<<version_minor<<"(build "<<build<<")\n"
+    <<"Computer name: "<<ComputerName;
+
     return buffer.str();
 }
 
