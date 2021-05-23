@@ -26,12 +26,12 @@ make_info_text() {
     DWORD info =GetVersion();
     DWORD mask = 0x0000ffff;
     DWORD version = info & mask;
-    cout<<endl<<version<<endl;
     DWORD version_major = version & 0x00ff;
-    cout<<version_major<<endl;
     DWORD version_minor = version & 0xff00;
     version_minor = version >>8;
-    cout<<version_minor<<endl;
+    DWORD platform = info>>16;
+    DWORD build;
+    if ((platform &0x8000) == 0) build =platform;
     return buffer.str();
 }
 
