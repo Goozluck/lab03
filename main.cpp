@@ -32,6 +32,7 @@ make_info_text() {
     DWORD platform = info>>16;
     DWORD build;
     if ((platform &0x8000) == 0) build =platform;
+    cout<<"Window V"<<version_major<<"."<<version_minor<<"(build "<<build<<")\n";
     return buffer.str();
 }
 
