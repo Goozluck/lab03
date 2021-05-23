@@ -8,6 +8,7 @@ const size_t SCREEN_WIDTH = 80;
 const size_t MAX_ASTERISK = SCREEN_WIDTH - 3 - 1;
 
 void find_minmax(vector<double> numbers, double& min, double& max) {
+
     if(numbers.size()==0)
         return;
     min = numbers[0];
@@ -23,6 +24,7 @@ void find_minmax(vector<double> numbers, double& min, double& max) {
     return;
 }
 vector<size_t>
+
 make_histogram(Input data) {
     vector<size_t> bins(data.bin_count);
     double min, max, bin_size;
@@ -81,4 +83,3 @@ show_histogram_text(const vector<size_t>& bins) {
     }
     return;
 }
-

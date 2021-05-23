@@ -1,6 +1,9 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <windows.h>
+#include "InfoText.h"
+
 using namespace std;
 void
 svg_begin(double width, double height) {
@@ -34,7 +37,7 @@ show_histogram_svg(const vector<size_t>& bins) {
     const auto TEXT_BASELINE = 20;
     const auto TEXT_WIDTH = 50;
     const auto BIN_HEIGHT = 30;
-    const auto BLOCK_WIDTH = 10;
+//    const auto BLOCK_WIDTH = 10;
     svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
     double top = 0;
     size_t max_count = bins[0];
@@ -43,14 +46,15 @@ show_histogram_svg(const vector<size_t>& bins) {
             max_count = j;
 
     for (size_t bin : bins) {
-        const double bin_width = BLOCK_WIDTH * bin;
         svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
         if (bin==max_count)
-            svg_rect(TEXT_WIDTH, top, IMAGE_WIDTH, BIN_HEIGHT);
+            svg_rect(TEXT_WIDTH, top, IMAGE_WIDTH, BIN_HEIGHT,"black","blue");
         else
             svg_rect(TEXT_WIDTH, top, IMAGE_WIDTH*(static_cast<double>(bin)/max_count), BIN_HEIGHT,"black","blue");
         top += BIN_HEIGHT;
     }
+    string InfoText=make_info_text();
+    svg_text(TEXT_LEFT, top + TEXT_BASELINE,InfoText);
     svg_end();
 
 }

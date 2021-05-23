@@ -1,12 +1,12 @@
 #include "histogram.h"
 #include"svg.h"
 #include <iostream>
+#include <sstream>
 #include <vector>
 #include <string>
 
 #include <curl/curl.h>
-#include <sstream>
-#include <string>
+#include<windows.h>
 
 using namespace std;
 
@@ -85,9 +85,7 @@ int main(int argc, char* argv[]) {
     } else {
         input = read_input(cin, true);
     }
-
     const auto bins = make_histogram(input);
     show_histogram_svg(bins);
-
     return 0;
 }

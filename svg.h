@@ -14,7 +14,5 @@ void svg_rect(double x, double y, double width, double height,
     string stroke="black", string fill="blue");
 void
 show_histogram_svg(const vector<size_t>& bins);
-//string
-//fill01(size_t bin,size_t max_count);
 
 #endif // SVG_H_INCLUDED
