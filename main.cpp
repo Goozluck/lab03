@@ -19,37 +19,21 @@ input_numbers(size_t count) {
     return result;
 }
 
-/*
+
 string
 make_info_text() {
     std::stringstream buffer;
     DWORD info =GetVersion();
-    //DWORD mask = 0b00000000'00000000'11111111'11111111;
-    DWORD mask = 0x0000ffff;
+    DWORD mask = 0b00000000'00000000'11111111'11111111;
     DWORD version = info & mask;
-    cout<<endl<<version<<endl;
-    DWORD version_major = version & 0x00ff;
-    cout<<version_major<<endl;
-    DWORD version_minor = version & 0xff00;
-    version_minor = version >>8;
-    cout<<version_minor<<endl;
-    DWORD platform = info>>16;
-    DWORD build;
-    if ((platform &0x8000) == 0) build =platform;
-
-    DWORD CNL = MAX_COMPUTERNAME_LENGTH+1;
-    char ComputerName[CNL];
-    GetComputerNameA(ComputerName,&CNL);
-
-    buffer<<"Window V"<<version_major<<"."<<version_minor<<"(build "<<build<<")\n"
-    <<"Computer name: "<<ComputerName;
-
+    cout<<version<<endl;
     return buffer.str();
 }
-*/
+
 
 int main() {
-
+    make_info_text();
+    return 0;
     size_t number_count;
     cin >> number_count;
     const auto numbers = input_numbers(number_count);

@@ -36,6 +36,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="InfoText.cpp" />
+		<Unit filename="InfoText.h" />
 		<Unit filename="histogram.cpp" />
 		<Unit filename="histogram.h">
 			<Option target="&lt;{~None~}&gt;" />
