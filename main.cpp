@@ -24,9 +24,14 @@ string
 make_info_text() {
     std::stringstream buffer;
     DWORD info =GetVersion();
-    DWORD mask = 0b00000000'00000000'11111111'11111111;
+    DWORD mask = 0x0000ffff;
     DWORD version = info & mask;
-    cout<<version<<endl;
+    cout<<endl<<version<<endl;
+    DWORD version_major = version & 0x00ff;
+    cout<<version_major<<endl;
+    DWORD version_minor = version & 0xff00;
+    version_minor = version >>8;
+    cout<<version_minor<<endl;
     return buffer.str();
 }
 
